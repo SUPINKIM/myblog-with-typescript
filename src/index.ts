@@ -1,4 +1,5 @@
 import App from './App';
+import { createState } from './state';
 
 export default function init() {
   const body = document.body;
@@ -6,6 +7,10 @@ export default function init() {
 
   const root = document.getElementById('app');
   root.appendChild(App());
+
+  window.addEventListener('DOMContentLoaded', () => {
+    createState();
+  });
 }
 
 init();
