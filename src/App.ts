@@ -1,9 +1,6 @@
 import renderNavigation from './nav/nav';
-import './globalStyle.css';
+import './style/globalStyle.css';
 
-export default function App(): DocumentFragment {
-  const fragment = document.createDocumentFragment();
-
-  fragment.appendChild(renderNavigation());
-  return fragment;
+export default function App(): HTMLElement {
+  return renderNavigation();
 }

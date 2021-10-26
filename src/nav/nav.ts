@@ -1,7 +1,8 @@
 import { State, getState } from '../state';
+import { createNavView } from '../template';
 import './nav.css';
 
-interface navInfo {
+export interface navInfo {
   title: string;
   color: string;
 }
@@ -27,16 +28,9 @@ export default function renderNavigation(): HTMLElement {
   container.className = 'nav-list-container';
   container.addEventListener('click', handleOnClickNavigation);
 
-  const template = (info: navInfo, index: number): string => {
-    return `
-    <div class="nav-item-container" id="nav-${index}" style="background-color:${info.color}">
-      <span class="nav-title">${info.title}<span>
-    </div>`;
-  };
-
-  titles.forEach((info, index) => {
-    container.innerHTML += template(info, index);
-  });
+  container.innerHTML = titles
+    .map((info, index) => createNavView(info, index))
+    .join('');
 
   return container;
 }

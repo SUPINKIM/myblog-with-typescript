@@ -1,15 +1,22 @@
-let singleState = null;
+import { getSubject } from './subject';
+
+let singleState: State | null = null;
 
 export class State {
   private selected: number;
+
   constructor() {
     this.selected = -1;
   }
   selectCard(cardNumber: number): void {
     this.selected = cardNumber;
+    this.notifyObserver();
   }
   getCardNumber(): number {
     return this.selected;
+  }
+  notifyObserver() {
+    getSubject().notify();
   }
 }
 
