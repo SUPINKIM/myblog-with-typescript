@@ -7,7 +7,7 @@ const contents = [
   '(주)파프리카스토리 근무\n 카카오 FE플랫폼 팀 소속 인턴 근무\n',
   'Team28 블로그 구현 프로젝트',
   '산책하기, 아메리카노, Dance🎵💃',
-  '앱 개발도 하고 싶고,, \n 웹 풀스택 개발도 능력만 된다면..? ',
+  '앱 개발도 하고 싶고,, \n g웹 풀스택 개발도 능력만 된다면..?',
 ];
 
 function onHandleClickReturnButton(event) {
